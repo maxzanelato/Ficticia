@@ -1,0 +1,8 @@
+.cor-section {
+    background-color: rgb(86, 163, 193) !important;
+}
+
+.carousel .carousel-item > img {
+    width: 100%;
+    height: 200px;
+}

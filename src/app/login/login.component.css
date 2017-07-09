@@ -1,0 +1,33 @@
+.profile-image-login {
+    width: 100px;
+    height: 100px !important;
+}
+
+.card .card-image img {
+    width: 100px;
+    height: 100px !important;
+    margin-left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: initial;
+}
+
+.card {
+    max-width: 350px;
+    margin: auto;
+}
+
+.login-form-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.link {
+    color: #0089ec;
+}
+
+#login_container {
+    padding-top: 50px;
+}

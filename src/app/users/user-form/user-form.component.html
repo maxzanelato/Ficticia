@@ -1,0 +1,121 @@
+
+<div class="container">
+  <h5>{{ title }}</h5>
+  <div class="row">
+    <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="name" type="text" class="validate"
+                [(ngModel)]="user.name" formControlName="name"
+                [class.invalid]="form.controls['name'].touched && !form.controls['name'].valid"
+          >
+          <label for="name"
+                [class.active]="user.name"
+                data-error="O nome é obrigatório e precisa ter ao menos três letras.">
+            Nome
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" class="validate"
+                [(ngModel)]="user.email" formControlName="email"
+                [class.invalid]="form.controls['email'].touched && !form.controls['email'].valid">
+          <label for="email"
+                [class.active]="user.email"
+                data-error="E-mail inválido!">
+            E-mail
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input id="phone" type="number" class="validate"
+                [(ngModel)]="user.phone" formControlName="phone"
+                [class.invalid]="form.controls['phone'].touched && !form.controls['phone'].valid">
+          <label for="phone" 
+              [class.active]="user.phone"
+              data-error="Telefone inválido!">
+            Telefone
+          </label>
+        </div>
+      </div>
+
+      <div formGroupName="address">
+        
+        <div class="row">
+
+          <div class="input-field col s4">
+            <i class="material-icons prefix">place</i>
+            <input id="zipcode" type="text" class="validate"
+                  [(ngModel)]="user.address.zipcode" formControlName="zipcode"
+                  [class.invalid]="form.controls['address'].controls['zipcode'].touched
+                    && !form.controls['address'].controls['zipcode'].valid"
+                  (blur)="consultarCEP()">
+            <label for="zipcode"
+                  [class.active]="user.address.zipcode"
+                  data-error="CEP inválido!">
+              CEP
+            </label>
+          </div>
+
+          <div class="input-field col s8">
+            <input id="street" type="text" class="validate"
+                  [(ngModel)]="user.address.street" formControlName="street"
+                  [class.invalid]="form.controls['address'].controls['street'].touched
+                    && !form.controls['address'].controls['street'].valid">
+            <label for="street"
+                  [class.active]="user.address.street"
+                  data-error="Logradouro inválido!">
+              Logradouro
+            </label>
+          </div>
+          
+        </div>
+        <div class="row">
+
+          <div class="input-field col s4">
+            <i class="material-icons prefix">map</i>
+            <input id="suite" type="text" class="validate"
+                  [(ngModel)]="user.address.suite" formControlName="suite">
+            <label for="suite" [class.active]="user.address.suite">Número</label>
+          </div>
+
+          <div class="input-field col s8">
+            <input id="city" type="text" class="validate"
+                  [(ngModel)]="user.address.city" formControlName="city">
+            <label for="city" [class.active]="user.address.city">Cidade</label>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 center-align">
+            <input type="checkbox" id="test5" (change)="setPerfil($event)" />
+            <label for="test5">Administrador</label>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col s6 right-align">
+          <button class="btn waves-effect waves-light" type="reset" id="btn_limpar">
+            Limpar<i class="material-icons right">delete</i>
+          </button>
+        </div>
+
+        <div class="col s6 left-align">
+          <button class="btn waves-effect waves-light" type="submit" [disabled]="!form.valid">
+            Salvar<i class="material-icons right">send</i>
+          </button>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>

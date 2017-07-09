@@ -1,0 +1,171 @@
+<ul id="slide-out" class="side-nav fixed"  *ngIf="usuarioJaAutenticado" >
+  <li id="avatar">
+    <div class="row">
+      
+      <div class="col s6">
+        <img [src]="pathImagePerfil" class="responsive-img circle" id="perfilEmpresa" alt="Perfil na empresa">
+      </div>
+      
+      <div id="nomePerfil">
+        <p>
+          {{ getNome() }}
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" (click)="showOptions()" data-activates="profile-dropdown">
+             <i class="zmdi zmdi-caret-down-circle"></i>
+          </a>
+        </p>
+        <p>{{ getPerfil() }}</p>
+      </div>
+
+      <ul id="profile-dropdown" class="dropdown-content"
+        [style.display]="getProfileOptions()"
+      >
+        <li><a href="#" (click)="escondePerfilOptions()"><i class="zmdi zmdi-face zmdi-hc-2x"></i> Perfil</a>
+        </li>
+        <li><a href="#" (click)="escondePerfilOptions()"><i class="zmdi zmdi-settings zmdi-hc-2x"></i> Configurações</a>
+        </li>
+        <li><a href="#" (click)="escondePerfilOptions()"><i class="zmdi zmdi-pin-help zmdi-hc-2x"></i> Ajuda</a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#" (click)="escondePerfilOptions()"><i class="zmdi zmdi-lock zmdi-hc-2x"></i> Bloquear</a>
+        </li>
+        <li><a routerLink="/logout" (click)="escondePerfilOptions()"><i class="material-icons prefix">power_settings_new</i> Sair</a>
+        </li>
+      </ul>
+
+    </div>
+  </li>
+  <li>
+    <a routerLink="" routerLinkActive="active">
+      <i class="zmdi zmdi-home zmdi-hc-2x"></i>
+      Home
+    </a>
+  </li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li>
+      <!-- Dropdown Trigger -->
+     <a materialize="dropdown" class='dropdown-button' data-activates='dropdown1'>
+       <i class="material-icons">supervisor_account</i>
+       Usuários >
+     </a>
+     <!-- Dropdown Structure -->
+     <ul id='dropdown1' class='dropdown-content' style="margin-top:60px;">
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-accounts-outline"></i>
+          Todos
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a routerLink="/users/new" routerLinkActive="active">
+          <i class="zmdi zmdi-account-add"></i>
+          Novo
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-search"></i>
+          Pesquisar
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-refresh-alt"></i>
+          Alterar
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-delete"></i>
+          Remover
+        </a>
+      </li>
+     </ul>
+  </li>
+  <li>
+    <div class="divider"></div>
+  </li>
+  <li>
+    <a routerLink="/logout" routerLinkActive="active">
+      <i class="material-icons prefix">power_settings_new</i>
+      Sair
+    </a>
+  </li>
+</ul>
+
+
+
+<div class="nav navbar" *ngIf="usuarioJaAutenticado">
+  <nav  id="navbar">
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo" style="z-index: -1">
+      <img [src]="pathImageLogo" class="responsive-img" id="logoEmpresa" alt="Logotipo da empresa">
+      <h5 class="login-form-text">Empresa Fictícia</h5>
+    </a>
+    <a href="#" data-activates="nav-mobile" class="button-collapse" materialize="sideNav"
+    [materializeParams]="[{menuWidth: 300,edge: 'left', closeOnClick: true, draggable: true}]">
+      <i class="material-icons">menu</i>
+    </a>
+  <ul class="right hide-on-med-and-down">
+    <li>
+      <a routerLink="/logout" routerLinkActive="active">
+        <i class="material-icons prefix">power_settings_new</i>
+      </a>
+    </li>
+  </ul>
+  <ul id="nav-mobile" class="side-nav" style="z-index:-1;">
+    <li style="margin-top: 60px;">
+      <a routerLink="" routerLinkActive="active">
+        <i class="zmdi zmdi-home zmdi-hc-2x"></i>
+        Home
+      </a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-accounts-outline"></i>
+          Todos
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a routerLink="/users/new" routerLinkActive="active">
+          <i class="zmdi zmdi-account-add"></i>
+          Novo
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-search"></i>
+          Pesquisar
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-refresh-alt"></i>
+          Alterar
+        </a>
+      </li>
+      <li>
+        <a routerLink="/users" routerLinkActive="active">
+          <i class="zmdi zmdi-delete"></i>
+          Remover
+        </a>
+      </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li>
+      <a routerLink="/logout" routerLinkActive="active">
+        <i class="material-icons prefix">power_settings_new</i>
+        Logout
+      </a>
+    </li>
+  </ul>
+  </div>
+</nav>
+</div>       

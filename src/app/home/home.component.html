@@ -1,0 +1,21 @@
+
+<div class="fullscreen background parallax">
+
+  <div class="parallax-container">
+    <div class="parallax" materialize="parallax"><img src="http://materializecss.com/images/parallax1.jpg"></div>
+  </div>
+  <div class="section cor-section">
+    <div class="row">
+        
+      <h5 class="center-align" style="color: white">Novos Usuários</h5>   
+      <div #carousel class="carousel" [ngClass]="{ 'initialized': showInitialized }"  materialize="carousel" [materializeActions]="actions"> 
+        <a *ngFor="let url of imageURLs" class="carousel-item"><img [src]="url"></a>
+      </div> 
+
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax" materialize="parallax"><img src="http://materializecss.com/images/parallax2.jpg"></div>
+  </div>
+
+</div>
