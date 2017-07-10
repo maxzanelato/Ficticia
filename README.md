@@ -34,4 +34,4 @@ Executar os passos:
 
 3. 'ng serve';
 
-4. Abrir o browser e digital 'http://localhost:4200'.
+4. Abrir o browser e digitar 'http://localhost:4200'.
