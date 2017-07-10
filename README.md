@@ -1,28 +1,37 @@
-# Angular4CrudRest
+# Gerenciador de Usuários
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+Aplicação Web contendo:
 
-## Development server
+- Login e senha;
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- 2 tipos de perfis (ADMIN e USER);
 
-## Code scaffolding
+- Interface para pesquisa dos usuários cadastrados;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+- Interface para cadastro dos usuários da aplicação;
 
-## Build
+- Usuário com acesso ADMIN poderá executar cadastro de outros usuários e visualizar os usuários;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- Usuário com acesso USER poderá apenas visualizar os usuários do sistema.
 
-## Running unit tests
+## Usuário e senha:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O usuário 'changeit' com senha 'changeit' possui perfil de administrador e o usuário '1' contendo senha '1' possui perfil de usuário normal.
 
-## Running end-to-end tests
+## Requisitos não funcionais
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- Desenvolvido em Angular 4 utilizando Angular CLI;
+- Angular Material;
+- Dados 'persistem' em memória.
 
-## Further help
+## Build e Run
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Executar os passos:
+
+1. Ir até a pasta do projeto;
+
+2. 'npm install' no prompt;
+
+3. 'ng serve';
+
+4. Abrir o browser e digital 'http://localhost:4200'.
